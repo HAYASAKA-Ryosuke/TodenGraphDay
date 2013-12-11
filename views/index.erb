@@ -1,0 +1,18 @@
+<p>
+<a href="/">今日</a>
+<a href="/?date=1">昨日</a>
+<form method="GET">
+<input type="text" name="date" size="20" maxlength="10"/><br/>
+<input type="submit" value="送信"/>
+</form>
+</p>
+<% if params[:date] %>
+  <h1><%= params[:date] %>日前の電力使用状況(東京電力)</h1>
+  <img src=<%= @graphimage  %>>
+  <h2><%= @graphdatetime %></h2>
+<% else %>
+  <h1>本日の電力使用状況(東京電力)</h1>
+  <p>参照:http://www.tepco.co.jp/forecast/html/images/juyo-j.csv</p>
+  <img src=<%= @graphimage %>>
+  <h2><%= @graphdatetime %></h2>
+<% end %>
