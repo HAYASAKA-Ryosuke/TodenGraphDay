@@ -1,10 +1,8 @@
-<p>
-<a href="/todengraph/">今日</a>
+<p><a href="/todengraph/">今日</a></p>
 <form method="GET">
-<input type="text" name="date" size="20" maxlength="10"/><br/>
-<input type="submit" value="送信"/>
+  <p><input type="number" min="0" max="30" value="0" name="date" size="20" maxlength="10"/>日前</p>
+  <p><input type="submit" value="送信"/></p>
 </form>
-</p>
 <% if params[:date] %>
   <h1><%= params[:date] %>日前の電力使用状況(東京電力)</h1>
   <img src=<%= @graphimage  %>>
